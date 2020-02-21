@@ -1,0 +1,17 @@
+server:
+  servlet:
+    context-path: "/championship"
+  port: 8080
+
+logging:
+  level:
+    org:
+      hibernate:
+        type:
+          descriptor:
+            sql:
+              BasicBinder=TRACE:
+
+spring:
+  application:
+    name: "championship"
