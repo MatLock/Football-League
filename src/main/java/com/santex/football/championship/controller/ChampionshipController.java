@@ -2,7 +2,6 @@ package com.santex.football.championship.controller;
 
 
 import com.santex.football.championship.aspect.LogExecutionTime;
-import com.santex.football.championship.client.FootballClient;
 import com.santex.football.championship.controller.response.BasicResponse;
 import com.santex.football.championship.controller.response.CompetitionResponse;
 import com.santex.football.championship.controller.response.TotalPlayersResponse;

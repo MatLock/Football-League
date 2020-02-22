@@ -1,8 +1,5 @@
 spring:
   profiles: prod
-  jackson:
-    serialization:
-      write_dates_as_timestamps=false:
   datasource:
     url: jdbc:mysql://${MYSQL_HOST}:3306/championship
     username: ${MYSQL_USER}
