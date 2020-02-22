@@ -1,16 +1,7 @@
 server:
   servlet:
-    context-path: "/championship"
+    context-path: "/santex-api"
   port: 8080
-
-logging:
-  level:
-    org:
-      hibernate:
-        type:
-          descriptor:
-            sql:
-              BasicBinder=TRACE:
 
 spring:
   application:
