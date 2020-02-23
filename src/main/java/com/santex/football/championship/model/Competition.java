@@ -3,7 +3,6 @@ package com.santex.football.championship.model;
 import com.santex.football.championship.client.model.CompetitionResponse;
 import com.santex.football.championship.client.model.LeagueResponse;
 import com.santex.football.championship.client.model.SquadResponse;
-import com.santex.football.championship.client.model.TeamResponse;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -20,7 +19,8 @@ public class Competition {
 
   @Id
   @Column(name = "ID",unique = true)
-  private Integer id;
+  @GeneratedValue(strategy=GenerationType.IDENTITY)
+  private Long id;
   @Column(name = "NAME")
   private String name;
   @Column(name = "AREA_NAME")
@@ -37,7 +37,6 @@ public class Competition {
 
   public Competition(LeagueResponse leagueResponse, List<SquadResponse> squadResponse){
     CompetitionResponse competitionResponse = leagueResponse.getCompetitionResponse();
-    this.id = competitionResponse.getId();
     this.name = competitionResponse.getName();
     this.areaName = competitionResponse.getArea().getName();
     this.code = competitionResponse.getCode();

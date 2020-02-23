@@ -16,7 +16,8 @@ public class Team {
 
   @Id
   @Column(name = "ID",unique = true)
-  private Integer id;
+  @GeneratedValue(strategy=GenerationType.IDENTITY)
+  private Long id;
   @Column(name = "NAME")
   private String name;
   @Column(name = "SHORT_NAME")
@@ -30,7 +31,6 @@ public class Team {
   private Set<Player> players;
 
   public Team(TeamResponse teamResponse, SquadResponse squadResponse){
-    this.id = teamResponse.getId();
     this.name = teamResponse.getName();
     this.shortName = teamResponse.getShortName();
     this.tla = teamResponse.getTla();

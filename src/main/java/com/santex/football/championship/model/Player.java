@@ -5,9 +5,7 @@ import com.santex.football.championship.client.model.PlayerResponse;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
 @Data
@@ -17,7 +15,8 @@ public class Player {
 
   @Id
   @Column(name = "ID",unique = true)
-  private Integer id;
+  @GeneratedValue(strategy=GenerationType.IDENTITY)
+  private Long id;
   @Column(name = "NAME")
   private String name;
   @Column(name = "POSITION")
@@ -33,7 +32,6 @@ public class Player {
   private String role;
 
   public Player(PlayerResponse playerResponse){
-    this.id = playerResponse.getId();
     this.name = playerResponse.getName();
     this.countryOfBirth = playerResponse.getCountryOfBirth();
     this.nationality = playerResponse.getNationality();
