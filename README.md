@@ -6,6 +6,7 @@
 ### Run it with Docker
 
  * Have [docker](https://www.docker.com/) installed
+ * Execute ```docker-compose build```
  * Execute ```docker-compose up```
  * Go to http://localhost:8080/swagger-ui.html to see swagger documentation
  
