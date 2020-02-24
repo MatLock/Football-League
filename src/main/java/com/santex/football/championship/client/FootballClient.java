@@ -43,7 +43,7 @@ public class FootballClient {
         throw new ClientNotFoundException();
       }
       return entity.getBody();
-    }catch (Exception e){
+    }catch (RestClientException e){
       throw new ClientException(e.getMessage());
     }
   }
