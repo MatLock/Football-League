@@ -7,11 +7,11 @@ import lombok.NoArgsConstructor;
 @Data
 public class TotalPlayersResponse extends BasicResponse{
 
-  private Integer total;
+  private Integer response;
 
   public TotalPlayersResponse(Integer total,Boolean error, String message){
     super(message, error);
-    this.total = total;
+    this.response = total;
   }
 
 }

@@ -47,7 +47,7 @@ public class ChampionshipControllerTest {
     TotalPlayersResponse totalPlayersResponse = championshipController.getTotalPlayers(CODE);
     assertThat(totalPlayersResponse.getMessage(),is(nullValue()));
     assertThat(totalPlayersResponse.getError(),is(Boolean.FALSE));
-    assertThat(totalPlayersResponse.getTotal(),is(TOTAL_PLAYERS));
+    assertThat(totalPlayersResponse.getResponse(),is(TOTAL_PLAYERS));
     verify(championshipService).countPlayers(CODE);
   }
 
