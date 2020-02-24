@@ -43,7 +43,7 @@ public class Competition {
     this.teams = leagueResponse.getTeams()
       .stream()
       .map(teamResponse ->{
-        Optional<SquadResponse> squadOpt = squadResponse.stream().filter(sq -> sq.getId().equals(teamResponse.getId())).findFirst();
+        Optional<SquadResponse> squadOpt = squadResponse.stream().filter(sq -> sq != null && sq.getId().equals(teamResponse.getId())).findFirst();
         if(squadOpt.isPresent()){
           return new Team(teamResponse,squadOpt.get());
         }

@@ -79,10 +79,10 @@ public class ChampionshipService {
   }
 
   private List<SquadResponse> obtainSquadsFromApi(List<TeamResponse> teams){
-    return teams.subList(0,8)
-                .parallelStream()
-                .map(team -> footballClient.obtainMembersOfTeam(team.getId()))
-                .collect(Collectors.toList());
+    List<TeamResponse> toFind = teams.size() > 8 ? teams.subList(0,8) : teams;
+    return toFind.parallelStream()
+                 .map(team -> footballClient.obtainMembersOfTeam(team.getId()))
+                 .collect(Collectors.toList());
   }
 
   private List<String> teamNamesOf(List<TeamResponse> teamResponses){
