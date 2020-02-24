@@ -15,13 +15,13 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 public class ExceptionHandlerController extends ResponseEntityExceptionHandler {
 
   @ExceptionHandler({ClientException.class})
-  public ResponseEntity<BasicResponse> handleReservationBadRequestError(Exception e){
+  public ResponseEntity<BasicResponse> handleReservationBadRequestError(ClientException e){
     BasicResponse response = new BasicResponse(e.getMessage(),Boolean.TRUE);
     return new ResponseEntity<>(response, HttpStatus.GATEWAY_TIMEOUT);
   }
 
   @ExceptionHandler({LeagueAlreadyImportedException.class})
-  public ResponseEntity<BasicResponse> handlerServiceException(Exception e){
+  public ResponseEntity<BasicResponse> handlerServiceException(LeagueAlreadyImportedException e){
     BasicResponse response = new BasicResponse(e.getMessage(),Boolean.TRUE);
     return new ResponseEntity<>(response, HttpStatus.CONFLICT);
   }

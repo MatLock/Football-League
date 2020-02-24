@@ -51,4 +51,13 @@ public class Competition {
       } ).collect(Collectors.toSet());
   }
 
+  public void addTeams(List<Team> teams){
+    List<Team> toRemove =
+      this.teams.stream().filter(t -> {
+        return teams.stream().anyMatch(ts -> ts.getName().equalsIgnoreCase(t.getName()));
+      }).collect(Collectors.toList());
+    this.teams.removeAll(toRemove);
+    this.teams.addAll(teams);
+  }
+
 }

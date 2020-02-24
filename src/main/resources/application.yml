@@ -1,6 +1,6 @@
 server:
-  servlet:
-    context-path: "/santex-api"
+  ##servlet:
+   ## context-path: "/santex-api"
   port: 8080
 
 spring:

@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController("Championship")
 @Api(value = "Championship Service", description = "Provides all operations related to a championship service")
-@RequestMapping("/championship")
+@RequestMapping("")
 public class ChampionshipController {
 
   private ChampionshipService championshipService;
@@ -25,7 +25,7 @@ public class ChampionshipController {
   }
 
   @GetMapping("/import-league/{code}")
-  @ApiOperation(value = "import a team", response = BasicResponse.class)
+  @ApiOperation(value = "import a league", response = BasicResponse.class)
   @ApiResponses(value = {
     @ApiResponse(code = 201, message = "Successfully created"),
     @ApiResponse(code = 409, message = "Team already imported"),
@@ -39,8 +39,8 @@ public class ChampionshipController {
     return new BasicResponse("Successfully Imported",Boolean.FALSE);
   }
 
-  @GetMapping("/{code}")
-  @ApiOperation(value = "get a team", response = CompetitionResponse.class)
+  @GetMapping("/league/{code}")
+  @ApiOperation(value = "get a league with teams", response = CompetitionResponse.class)
   @ApiResponses(value = {
     @ApiResponse(code = 200, message = "Ok"),
     @ApiResponse(code = 404, message = "Not found"),
@@ -52,7 +52,7 @@ public class ChampionshipController {
   }
 
   @GetMapping("/total-players/{code}")
-  @ApiOperation(value = "get a team", response = TotalPlayersResponse.class)
+  @ApiOperation(value = "get a team and players", response = TotalPlayersResponse.class)
   @ApiResponses(value = {
     @ApiResponse(code = 200, message = "Ok"),
     @ApiResponse(code = 404, message = "Not found"),
