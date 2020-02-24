@@ -1,5 +1,6 @@
 ![Java CI](https://github.com/MatLock/championship/workflows/Java%20CI/badge.svg)
-![Travis CI](https://travis-ci.org/MatLock/championship.svg?branch=master)
+[![Travis CI](https://travis-ci.org/MatLock/championship.svg?branch=master)](https://travis-ci.org/MatLock/championship)
+
 # Championship
 
 ### Run it with Docker
