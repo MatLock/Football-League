@@ -12,8 +12,7 @@ public interface ChampionshipRepository extends JpaRepository<Competition,String
 
   String COUNT_PLAYERS = "SELECT COUNT(*) FROM COMPETITION c" +
     " JOIN COMPETITION_TEAM tc ON tc.COMPETITION_ID = c.ID" +
-    " JOIN TEAM t ON t.ID = tc.TEAM_ID" +
-    " JOIN PLAYER p ON p.TEAM_ID = t.ID" +
+    " JOIN PLAYER p ON p.TEAM_ID = tc.TEAM_ID" +
     " WHERE p.role = 'PLAYER'";
 
   /**
