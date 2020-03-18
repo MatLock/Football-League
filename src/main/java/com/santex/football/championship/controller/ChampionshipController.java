@@ -1,6 +1,5 @@
 package com.santex.football.championship.controller;
 
-
 import com.santex.football.championship.aspect.LogExecutionTime;
 import com.santex.football.championship.controller.response.BasicResponse;
 import com.santex.football.championship.controller.response.CompetitionResponse;
@@ -10,7 +9,6 @@ import io.swagger.annotations.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-
 
 @RestController("Championship")
 @Api(value = "Championship Service", description = "Provides all operations related to a championship service")

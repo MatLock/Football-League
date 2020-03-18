@@ -70,7 +70,7 @@ public class ChampionshipApplicationTest {
     assertThat(mvcResult.getResponse().getStatus(),is(HttpStatus.OK.value()));
     assertThat(totalPlayersResponse.getError(),is(Boolean.FALSE));
     assertThat(totalPlayersResponse.getMessage(),is(nullValue()));
-    assertThat(totalPlayersResponse.getResponse(),is(241));
+    assertThat(totalPlayersResponse.getResponse(),is(243));
   }
 
   @SneakyThrows

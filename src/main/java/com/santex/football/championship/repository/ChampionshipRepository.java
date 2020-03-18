@@ -3,6 +3,7 @@ package com.santex.football.championship.repository;
 import com.santex.football.championship.model.Competition;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
@@ -13,7 +14,8 @@ public interface ChampionshipRepository extends JpaRepository<Competition,String
   String COUNT_PLAYERS = "SELECT COUNT(*) FROM COMPETITION c" +
     " JOIN COMPETITION_TEAM tc ON tc.COMPETITION_ID = c.ID" +
     " JOIN PLAYER p ON p.TEAM_ID = tc.TEAM_ID" +
-    " WHERE p.role = 'PLAYER'";
+    " WHERE p.role = 'PLAYER'" +
+    " AND c.code = :code";
 
   /**
    *  finds a competition by its ID
@@ -42,7 +44,7 @@ public interface ChampionshipRepository extends JpaRepository<Competition,String
    * @return
    */
   @Query(value = COUNT_PLAYERS,nativeQuery = true)
-  Integer countPlayers(String code);
+  Integer countPlayers(@Param("code") String code);
 
 
 }
