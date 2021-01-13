@@ -21,6 +21,7 @@
     <jackson.jaxrs.json.provider>2.2.1</jackson.jaxrs.json.provider>
     <java.version>1.8</java.version>
     <spring.swagger>2.9.2</spring.swagger>
+    <mockserver>3.10.8</mockserver>
   </properties>
 
 	<dependencies>
@@ -74,6 +75,17 @@
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
       <version>8.0.18</version>
+    </dependency>
+
+    <dependency>
+        <groupId>org.mock-server</groupId>
+        <artifactId>mockserver-netty</artifactId>
+        <version>${mockserver}</version>
+    </dependency>
+    <dependency>
+        <groupId>org.mock-server</groupId>
+        <artifactId>mockserver-client-java</artifactId>
+        <version>${mockserver}</version>
     </dependency>
 
     <dependency>

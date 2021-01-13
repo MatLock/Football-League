@@ -5,6 +5,8 @@ import com.santex.football.championship.client.exception.ClientNotFoundException
 import com.santex.football.championship.client.model.LeagueResponse;
 import com.santex.football.championship.client.model.SquadResponse;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.client.RestClientException;
@@ -15,12 +17,18 @@ import org.springframework.web.util.UriComponentsBuilder;
 @Slf4j
 public class FootballClient {
 
-  private static final String FOOTBALL_URL = "https://api.football-data.org/v2";
   private static final String COMPETITIONS = "/competitions/";
   private static final String TEAMS = "/teams/";
   private static final String AUTH_HEADER = "X-Auth-Token";
   private static final String AUTH_HEADER_VALUE = "cc8d9203e0c7457f88ca894780449817";
   private static final String APPLICATION_JSON = "application/json";
+
+  private String footballUrl;
+
+  @Autowired
+  public FootballClient(@Value("${championship.football_url}") String footballUrl){
+    this.footballUrl = footballUrl;
+  }
 
   public LeagueResponse obtainLeagueByCode(String code){
     try{
@@ -57,7 +65,7 @@ public class FootballClient {
   }
 
   private String buildURI(String... paths){
-    UriComponentsBuilder builder =UriComponentsBuilder.fromUriString(FOOTBALL_URL);
+    UriComponentsBuilder builder =UriComponentsBuilder.fromUriString(footballUrl);
     for (String p : paths){
       builder.path(p);
     }

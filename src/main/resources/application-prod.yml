@@ -15,4 +15,6 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5Dialect
+championship:
+  football_url: https://api.football-data.org/v2
 

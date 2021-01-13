@@ -1,0 +1,43 @@
+{
+  "count": 79,
+  "filters": {},
+  "competition": {
+    "id": 2001,
+    "area": {
+      "id": 2077,
+      "name": "Europe"
+    },
+    "name": "UEFA Champions League",
+    "code": "CL",
+    "plan": "TIER_ONE",
+    "lastUpdated": "2020-12-10T10:40:03Z"
+  },
+  "season": {
+    "id": 642,
+    "startDate": "2020-08-08",
+    "endDate": "2021-05-29",
+    "currentMatchday": 6,
+    "winner": null
+  },
+  "teams": [
+    {
+      "id": 4,
+      "area": {
+        "id": 2088,
+        "name": "Germany"
+      },
+      "name": "Borussia Dortmund",
+      "shortName": "Dortmund",
+      "tla": "BVB",
+      "crestUrl": "https://crests.football-data.org/4.svg",
+      "address": "Rheinlanddamm 207-209 Dortmund 44137",
+      "phone": "+49 (231) 90200",
+      "website": "http://www.bvb.de",
+      "email": "info@bvb.de",
+      "founded": 1909,
+      "clubColors": "Black / Yellow",
+      "venue": "Signal Iduna Park",
+      "lastUpdated": "2020-12-08T17:54:19Z"
+    }
+  ]
+}

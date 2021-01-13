@@ -47,8 +47,6 @@ public class FootballClientTest {
   @Mock
   private RestClientException restClientException;
 
-  @InjectMocks
-  @Spy
   private FootballClient footballClient;
 
   @Rule
@@ -56,6 +54,7 @@ public class FootballClientTest {
 
   @Before
   public void setUp(){
+    footballClient = spy(new FootballClient("https://api.football-data.org/v2/"));
     when(footballClient.createRestTemplate()).thenReturn(restTemplate);
 
     when(restTemplate.exchange(eq(GET_TEAMS),eq(HttpMethod.GET),any(),eq(LeagueResponse.class)))
