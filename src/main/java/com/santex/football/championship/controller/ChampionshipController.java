@@ -24,6 +24,9 @@ public class ChampionshipController {
 
   @GetMapping("/import-league/{code}")
   @ApiOperation(value = "import a league", response = BasicResponse.class)
+  @ApiImplicitParams(
+    @ApiImplicitParam(name = "Authorization",required = true, paramType = "header", dataTypeClass = String.class, example = "Bearer access_token")
+  )
   @ApiResponses(value = {
     @ApiResponse(code = 201, message = "Successfully created"),
     @ApiResponse(code = 409, message = "Team already imported"),

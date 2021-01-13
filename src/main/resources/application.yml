@@ -6,3 +6,15 @@ server:
 spring:
   application:
     name: "championship"
+
+management:
+  server:
+    port: 8081
+  endpoints:
+    web:
+      base-path: "/"
+      exposure:
+        include: "*"
+      path-mapping:
+        metrics: "metrics-name"
+        prometheus: "metrics"

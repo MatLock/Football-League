@@ -24,6 +24,8 @@
  all the queries done to the data base.
  
  
+ ### METRICS
+ Endpoints statistics and JVM status in http://localhost:8081/metrics
  
  ___________________________________________________
    Jorge Flores - [LinkedIn Profile](https://www.linkedin.com/in/jorge-flores-45b58988/?locale=en_US) 
