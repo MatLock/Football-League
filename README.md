@@ -25,7 +25,7 @@
  
  
  ### METRICS
- Endpoints statistics and JVM status in http://localhost:8081/metrics
+ Endpoints statistics and JVM status in http://localhost:8081/metrics for both approaches
  
  ___________________________________________________
    Jorge Flores - [LinkedIn Profile](https://www.linkedin.com/in/jorge-flores-45b58988/?locale=en_US) 
